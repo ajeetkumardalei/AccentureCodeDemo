@@ -1,0 +1,6 @@
+framework module Pods_AccentureCodeDemo_AccentureCodeDemoUITests {
+  umbrella header "Pods-AccentureCodeDemo-AccentureCodeDemoUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
