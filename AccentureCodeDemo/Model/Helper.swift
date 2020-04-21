@@ -38,11 +38,11 @@ class Helper: NSObject {
 
     func IS_IPAD() -> Bool {
         switch UIDevice.current.userInterfaceIdiom {
-        case .phone: // It's an iPhone
+        case .phone:
             return false
-        case .pad: // It's an iPad
+        case .pad:
             return true
-        case .unspecified: // undefined
+        case .unspecified: 
             return false
         default:
             return false

@@ -14,8 +14,8 @@ import SystemConfiguration
 class APIManager: NSObject {
     static let shared = APIManager()
     
-    
-    private func connectedToNetwork() -> Bool {
+
+    func connectedToNetwork() -> Bool {
         var zeroAddress = sockaddr_in()
         zeroAddress.sin_len = UInt8(MemoryLayout<sockaddr_in>.size)
         zeroAddress.sin_family = sa_family_t(AF_INET)
@@ -32,28 +32,21 @@ class APIManager: NSObject {
     }
     
     private func operation(with urlStr:String, completionSuccess: @escaping(_ dataToSend: Data) -> Void ) {
-        if connectedToNetwork() {
+        
+        guard let url = URL(string: urlStr) else {return}
+        
+        let dataTask = URLSession.shared.dataTask(with: url) { (data, urlResponse, error) in
             
-            guard let url = URL(string: urlStr) else {return}
-            
-            let dataTask = URLSession.shared.dataTask(with: url) { (data, urlResponse, error) in
-                
-                if let err = error {
-                    debugPrint("Client error! == \(err.localizedDescription)")
-                    return
-                }
-                
-                //success
-                guard let dataResponse = data, let httpResponse = urlResponse as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {print("Server error!"); return }
-
-                completionSuccess(dataResponse)
+            if let err = error {
+                debugPrint("Client error! == \(err.localizedDescription)")
+                return
             }
             
-            dataTask.resume()
-            
-        } else {
-            debugPrint(Constant.NetworkManager.apiNoNetworkMessage)
+            guard let dataResponse = data, let httpResponse = urlResponse as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {print("Server error!"); return }
+            completionSuccess(dataResponse)
         }
+        
+        dataTask.resume()
         
     }
     
@@ -63,11 +56,9 @@ class APIManager: NSObject {
         operation(with: fullURL) { (dataToSend) in
             
             guard let mydata = String(decoding: dataToSend, as: UTF8.self).data(using: .utf8) else {return}
-            
             do {
                 let model = try JSONDecoder().decode(CanadaInfo.self, from: mydata)
                 CompletionSuccess(model)
-
             } catch {
                 debugPrint("JSON error: \(error.localizedDescription)")
             }

@@ -9,34 +9,34 @@
 import UIKit
 
 class DashboardCell: UITableViewCell {
-    static let cellIdentifier = "DashboardCell"
-
-    @IBOutlet weak var btnImage: UIButton!
-    @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var lblDesc: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        btnImage.setRoundCornder(0.6, .black)
-
-        lblTitle.lineBreakMode = NSLineBreakMode.byWordWrapping
-        lblDesc.lineBreakMode = NSLineBreakMode.byWordWrapping
+        self.imageView?.setRoundCornder(0.6, .black)
+        self.textLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        self.detailTextLabel?.textColor = .darkGray
+        self.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        self.detailTextLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        self.textLabel?.numberOfLines = 0
+        self.detailTextLabel?.numberOfLines = 0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func configureCell(with item:Row) {
-        lblTitle.text = item.title ?? "N/A"
-        lblDesc.text = item.description ?? "N/A"
+        self.textLabel?.text = item.title ?? "N/A"
+        self.detailTextLabel?.text = item.description ?? "N/A"
         
         if let strImgURL = item.imageHref {
-            btnImage.setImageFromAlmofireURL(strImgURL: strImgURL, isShowIndicator: true, placeholderimg: UIImage(named: placeholderImg)) { (isSuccess) in
-                debugPrint("image downloaded successfully.")
-            }
+            self.imageView?.setImageFromAlmofireURL(strImgURL: strImgURL, isShowIndicator: true, placeholderimg: Placeholder.noImage, completionHandler: { (isSuccess) in
+                debugPrint("image Downloaded successfully")
+            })
+
         }
     }
+
 }
+
+

@@ -11,7 +11,6 @@
 		662BB86B69E7673BC0D04852 /* Pods_AccentureCodeDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81697D7FFABAAB358887F0D4 /* Pods_AccentureCodeDemoTests.framework */; };
 		A7B54A0CB2102A374837A6C1 /* Pods_AccentureCodeDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC7B490C17A87D7D5E2CEDC /* Pods_AccentureCodeDemo.framework */; };
 		DF438EF9243D42D5008E6F54 /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF438EF7243D42D5008E6F54 /* DashboardCell.swift */; };
-		DF438EFA243D42D5008E6F54 /* DashboardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF438EF8243D42D5008E6F54 /* DashboardCell.xib */; };
 		DFB1CDA8243C6F23006BF7B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1CDA7243C6F23006BF7B5 /* AppDelegate.swift */; };
 		DFB1CDAA243C6F23006BF7B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1CDA9243C6F23006BF7B5 /* SceneDelegate.swift */; };
 		DFB1CDAC243C6F23006BF7B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1CDAB243C6F23006BF7B5 /* ViewController.swift */; };
@@ -56,7 +55,6 @@
 		A2519BC2869C151BA8D92181 /* Pods-AccentureCodeDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AccentureCodeDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-AccentureCodeDemoTests/Pods-AccentureCodeDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CFC7B490C17A87D7D5E2CEDC /* Pods_AccentureCodeDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AccentureCodeDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF438EF7243D42D5008E6F54 /* DashboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCell.swift; sourceTree = "<group>"; };
-		DF438EF8243D42D5008E6F54 /* DashboardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardCell.xib; sourceTree = "<group>"; };
 		DFB1CDA4243C6F23006BF7B5 /* AccentureCodeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccentureCodeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB1CDA7243C6F23006BF7B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFB1CDA9243C6F23006BF7B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				DF438EF7243D42D5008E6F54 /* DashboardCell.swift */,
-				DF438EF8243D42D5008E6F54 /* DashboardCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -359,7 +356,6 @@
 			files = (
 				DFB1CDB4243C6F29006BF7B5 /* LaunchScreen.storyboard in Resources */,
 				DFB1CDB1243C6F29006BF7B5 /* Assets.xcassets in Resources */,
-				DF438EFA243D42D5008E6F54 /* DashboardCell.xib in Resources */,
 				DFB1CDAF243C6F23006BF7B5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

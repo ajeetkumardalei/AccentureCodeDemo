@@ -17,9 +17,21 @@ struct Constant {
         static let baseURL = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
     }
     
-    struct NetworkManager {
-        static let apiNoNetworkMessage = "No network available"
-    }
+}
+
+
+
+struct NetWorkManager {
+    static let nonetworkMessage = "Offline! Please check your internet connection"
+}
+
+struct CellManager {
+    static let cellIdentifier = "DashboardCell"
+}
+
+struct Placeholder {
+    static let imgName = "noimage"
+    static let noImage = UIImage(named: imgName)
 }
 
 
